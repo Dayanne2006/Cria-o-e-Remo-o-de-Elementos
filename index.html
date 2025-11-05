@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Criação e Remoção de Elementos</title>
+  </head>
+<body>
+        <div id="ex1"></div>
+           <script>
+        const div1 = document.getElementById("ex1");
+        const p1 = document.createElement("p");
+        p1.textContent = "Elemento criado dinamicamente com JavaScript.";
+        div1.appendChild(p1);
+           </script>
+
+        <div id="ex2"></div>
+         <script>
+      const div2 = document.getElementById("ex2");
+      for (let i = 1; i <= 3; i++) {
+      const p = document.createElement("p");
+      p.textContent = `Parágrafo número ${i}`;
+      div2.appendChild(p);
+      }
+        </script>
+
+        <div id="ex3"></div>
+       <script>
+     const div3 = document.getElementById("ex3");
+     const ul = document.createElement("ul");
+     for (let i = 1; i <= 3; i++) {
+     const li = document.createElement("li");
+     li.textContent = `Item ${i}`;
+     ul.appendChild(li);
+     }
+    div3.appendChild(ul);
+       </script>
+
+       <div id="ex4"></div>
+      <script>
+    const frutas = ["Maçã", "Banana", "Laranja", "Uva", "Abacaxi"];
+    const ulFrutas = document.createElement("ul");
+    frutas.forEach(fruta => {
+    const li = document.createElement("li");
+    li.textContent = fruta;
+    ulFrutas.appendChild(li);
+    });
+    document.getElementById("ex4").appendChild(ulFrutas);
+      </script>
+
+      <div id="ex5"></div>
+       <script>
+       const div5 = document.getElementById("ex5");
+       const pA = document.createElement("p");
+       const pB = document.createElement("p");
+     pA.textContent = "Primeiro parágrafo.";
+     pB.textContent = "Segundo parágrafo.";
+      div5.appendChild(pA);
+      div5.appendChild(pB);
+      div5.removeChild(pB);
+      </script>
+
+      <div id="ex7"></div>
+        <script>
+         const div7 = document.getElementById("ex7");
+         const ul7 = document.createElement("ul");
+        for (let i = 1; i <= 4; i++) {
+        const li = document.createElement("li");
+        li.textContent = `Item ${i}`;
+        ul7.appendChild(li);
+        }
+         div7.appendChild(ul7);
+         const ultimo = ul7.lastElementChild;
+         ul7.removeChild(ultimo);
+       </script>
+
+       <div id="ex8"></div>
+        <script>
+        const div8 = document.getElementById("ex8");
+        for (let i = 1; i <= 3; i++) {
+        const p = document.createElement("p");
+        p.textContent = `Elemento ${i}`;
+        div8.appendChild(p);
+        }
+          const meio = div8.children[1];
+          div8.removeChild(meio);
+          </script>
+
+       <div id="ex9" style="display: flex; gap: 5px;"></div>
+        <script>
+        const div9 = document.getElementById("ex9");
+        const cores = ["red", "blue", "green", "orange", "purple"];
+          cores.forEach((cor, i) => {
+          const bloco = document.createElement("div");
+          bloco.textContent = `Bloco ${i + 1}`;
+          bloco.style.backgroundColor = cor;
+          bloco.style.color = "white";
+          bloco.style.padding = "10px";
+          div9.appendChild(bloco);
+          });
+       while (div9.firstChild) {
+       div9.removeChild(div9.firstChild);
+       }
+        </script>
+
+        <div id="ex10"></div>
+        <script>
+          const div10 = document.getElementById("ex10");
+          const titulo = document.createElement("h2");
+          const paragrafo = document.createElement("p");
+        titulo.textContent = "Título criado dinamicamente";
+        paragrafo.textContent = "Este é o parágrafo que permanecerá na tela.";
+          div10.appendChild(titulo);
+          div10.appendChild(paragrafo);
+          div10.removeChild(titulo);
+        </script>
+    </body>
+</html>
